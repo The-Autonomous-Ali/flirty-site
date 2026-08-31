@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flirty — a dating app that isn't casual about it</title>
+<meta name="description" content="Flirty is a dating app for people looking for something real. 18+, verified, and private by default.">
+
+<!--
+  The home page Google's OAuth consent screen links to.
+
+  WHY IT EXISTS AT ALL: the sign-in box that says "Flirty wants access to your
+  Google Account" is a web page, not part of the app, and Google will not show
+  it to anyone outside the test list until it can point them at a site that
+  says who this is. That is the whole reason an Android app needs a home page.
+
+  It is built in the app's own direction (3a "Punch") rather than the softer
+  serif the two legal pages use, because this is the first thing a person sees
+  with the product's name on it and it should look like the product. The legal
+  pages predate the redesign; bringing them across is worth doing and is not
+  urgent.
+
+  No build step, no framework, one file. It is served by GitHub Pages straight
+  out of the repository, and a page that needs compiling is a page that breaks
+  the day nobody remembers how.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;600;700&display=swap">
+
+<style>
+  :root {
+    /* Straight out of app/src/main/res/values/colors.xml. Same numbers, so the
+       site and the app are one thing rather than two that resemble each other. */
+    --cream:   #FFF6EC;
+    --white:   #FFFFFF;
+    --ink:     #14121A;
+    --ink-soft:#3E3648;
+    --muted:   #5E5568;
+    --pink:    #FF2E63;
+    --violet:  #5B2BFF;
+    --yellow:  #FFD84D;
+
+    --display: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --body:    "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --border: 2px solid var(--ink);
+    --radius: 22px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 72px; }
+
+  /* Depth in this direction is a SOLID ink rectangle offset down-right, never
+     a blurred shadow. Getting that wrong is the quickest way to look like a
+     different product. */
+  .hard { box-shadow: 5px 5px 0 var(--ink); }
+
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 44px; }
+  .mark {
+    width: 40px; height: 40px; border-radius: 13px;
+    background: var(--pink); border: var(--border);
+  }
+  .wordmark {
+    font-family: var(--display); font-weight: 800; font-size: 26px;
+    letter-spacing: -0.035em;
+  }
+
+  h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(38px, 8vw, 60px); line-height: 0.98;
+    letter-spacing: -0.045em; margin: 0 0 20px;
+  }
+  .lede { font-size: 19px; color: var(--muted); margin: 0 0 32px; max-width: 52ch; }
+
+  .chip {
+    display: inline-block; padding: 7px 14px; border-radius: 14px;
+    border: var(--border); background: var(--violet); color: var(--white);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 22px;
+  }
+
+  .card {
+    background: var(--white); border: var(--border); border-radius: var(--radius);
+    padding: 26px; margin: 18px 0;
+  }
+  .card h2 {
+    font-family: var(--display); font-weight: 800; font-size: 24px;
+    letter-spacing: -0.03em; margin: 0 0 10px;
+  }
+  .card p { margin: 0; color: var(--ink-soft); }
+
+  .grid { display: grid; gap: 18px; grid-template-columns: 1fr; margin: 36px 0; }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+  .notice {
+    background: var(--yellow); border: var(--border); border-radius: 16px;
+    padding: 18px 20px; margin: 36px 0; font-weight: 600; color: var(--ink);
+  }
+
+  h2.section {
+    font-family: var(--display); font-weight: 800; font-size: 30px;
+    letter-spacing: -0.035em; margin: 48px 0 8px;
+  }
+
+  footer {
+    margin-top: 56px; padding-top: 26px; border-top: var(--border);
+    display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center;
+  }
+  footer a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  footer a:hover { color: var(--pink); }
+  .contact { color: var(--muted); font-size: 15px; }
+
+  /* The site is a single deliberate look. It does not follow the OS theme,
+     because the canvas has one ground and inventing a dark twin here would be
+     designing by eye -- the exact thing this project has already had rejected
+     once. */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark" aria-hidden="true"></div>
+    <div class="wordmark">Flirty</div>
+  </header>
+
+  <span class="chip">18+ only</span>
+  <h1>Nothing casual about this dating app</h1>
+  <p class="lede">
+    Fifteen people a day. No endless scroll, no bottomless feed — a small number
+    of real profiles, and the time to actually read them.
+  </p>
+
+  <div class="grid">
+    <div class="card hard">
+      <h2>A daily limit, on purpose</h2>
+      <p>Everyone gets a set number of people each day. Swiping stops being a
+         reflex when it runs out, which is the point.</p>
+    </div>
+    <div class="card hard">
+      <h2>Adults only</h2>
+      <p>Every account confirms a date of birth before it can be created, and
+         the rule is enforced on our servers, not just in the app.</p>
+    </div>
+    <div class="card hard">
+      <h2>Private by default</h2>
+      <p>Your exact location is never shared. Other people see a distance, and
+         the coordinates never leave our database.</p>
+    </div>
+    <div class="card hard">
+      <h2>Yours to delete</h2>
+      <p>Account deletion is in the app and it deletes — your profile, photos,
+         matches and messages. Not a deactivation.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    Flirty is in testing and is not yet on Google Play. If you are here from the
+    Google sign-in screen, that is the app asking only for your name and email
+    address — nothing is ever posted to your Google account.
+  </div>
+
+  <h2 class="section">Signing in</h2>
+  <p style="color: var(--muted); max-width: 60ch;">
+    Flirty uses Sign in with Google so there is no password to invent and no
+    code to wait for. We receive your email address and the name on your Google
+    account. Your email is only how you are signed in — it never appears on your
+    profile, and you choose the name other people see.
+  </p>
+
+  <footer>
+    <a href="legal/web/privacy-policy.html">Privacy policy</a>
+    <a href="legal/web/delete-account.html">Delete your account</a>
+    <span class="contact">flirty.app.support@gmail.com</span>
+  </footer>
+
+</div>
+</body>
+</html>

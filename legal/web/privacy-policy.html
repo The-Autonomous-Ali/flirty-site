@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flirty Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --ground:  #FBF9F9;
+    --surface: #FFFFFF;
+    --raised:  #F5EFF1;
+    --ink:     #1A1418;
+    --muted:   #6B5C63;
+    --accent:  #D81E45;
+    --accent-ink: #FFFFFF;
+    --rule:    #EAE0E3;
+    --warn-bg: #FDF2F4;
+    --warn-rule: #F0C4CE;
+
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --body:    "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:  #141013;
+      --surface: #1D181B;
+      --raised:  #262023;
+      --ink:     #F2EBEE;
+      --muted:   #A8969D;
+      --accent:  #FF6B85;
+      --accent-ink: #24090F;
+      --rule:    #2E262A;
+      --warn-bg: #2A1A20;
+      --warn-rule: #5C3340;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:  #141013;
+    --surface: #1D181B;
+    --raised:  #262023;
+    --ink:     #F2EBEE;
+    --muted:   #A8969D;
+    --accent:  #FF6B85;
+    --accent-ink: #24090F;
+    --rule:    #2E262A;
+    --warn-bg: #2A1A20;
+    --warn-rule: #5C3340;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .masthead-inner,
+  .page {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding-inline: 1.5rem;
+  }
+
+  .masthead-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-block: 1.1rem;
+  }
+
+  .mark { width: 1.4rem; height: 1.4rem; flex: none; }
+
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-tag {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .page {
+    padding-block: 3.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .lede { display: flex; flex-direction: column; gap: 1rem; }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 6vw, 2.9rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .standfirst {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .stamp {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* Sections are numbered because the policy is genuinely a numbered
+     instrument -- people cite "section 8" when they ask us to delete things. */
+  section.clause {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .clause > h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.45rem;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+  }
+
+  .num {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    flex: none;
+  }
+
+  h3 {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0.7rem 0 -0.2rem;
+  }
+
+  p { margin: 0; }
+
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .scroller { overflow-x: auto; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 30rem;
+    font-size: 0.94rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 0.4rem;
+  }
+
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  th {
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    background: var(--raised);
+  }
+
+  td:first-child { font-weight: 600; white-space: nowrap; }
+
+  .note {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-rule);
+    border-radius: 0.5rem;
+    padding: 1.15rem 1.35rem;
+    font-size: 0.97rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .addr { font-family: var(--mono); font-size: 0.92rem; word-break: break-word; }
+
+  .btn {
+    align-self: flex-start;
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.4rem;
+  }
+
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+      <path d="M28,38c0,-10 12,-17 22,-8c2,2 3,4 4,6c1,-2 2,-4 4,-6c10,-9 22,-2 22,8c0,19 -26,34 -26,34S28,57 28,38z"
+            style="fill: var(--accent)" />
+    </svg>
+    <span class="wordmark">Flirty</span>
+    <span class="masthead-tag">Privacy</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="lede">
+    <h1>Privacy Policy</h1>
+    <p class="standfirst">
+      What Flirty collects, why, who it goes to, and how you get rid of it.
+    </p>
+    <p class="stamp">Last updated 22 August 2026</p>
+  </div>
+
+  <section class="clause" id="s1">
+    <h2><span class="num">01</span> Who is responsible</h2>
+    <p>Sameer Ali is the data controller for
+      Flirty. Contact: <span class="addr">flirty.app.support@gmail.com</span>.</p>
+  </section>
+
+  <section class="clause" id="s2">
+    <h2><span class="num">02</span> You must be 18 or older</h2>
+    <p>Flirty is for adults. We ask for your date of birth at sign-up and refuse accounts under 18.
+      We do not knowingly collect data from children. If you believe a minor has an account, write
+      to <span class="addr">flirty.app.support@gmail.com</span> and we will delete it.</p>
+  </section>
+
+  <section class="clause" id="s3">
+    <h2><span class="num">03</span> What we collect</h2>
+
+    <h3>You give us this directly</h3>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Data</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Email address</td><td>It is your login. A one-time code is sent to it to prove the address is yours. It is never shown on your profile.</td></tr>
+          <tr><td>Name</td><td>Shown on your profile, as you type it.</td></tr>
+          <tr><td>Date of birth</td><td>To confirm you are 18 or over, and to show your age on your profile.</td></tr>
+          <tr><td>Gender</td><td>To match you with the people you want to see, and to be shown to them.</td></tr>
+          <tr><td>City</td><td>Shown on your profile.</td></tr>
+          <tr><td>Bio</td><td>Optional free text you write, shown on your profile.</td></tr>
+          <tr><td>Photos</td><td>Shown on your profile.</td></tr>
+          <tr><td>Messages</td><td>Delivered to the person you are talking to, and stored so you both keep the conversation.</td></tr>
+          <tr><td>Reports and blocks</td><td>To act on safety complaints.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Your device gives us this, with your permission</h3>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Data</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Precise location</td><td>To show you people within your chosen distance, and to place you in theirs. You can decline; the app then relies on the city you typed.</td></tr>
+          <tr><td>Camera access</td><td>Only to take a profile photo, when you choose the camera instead of your gallery. We do not access your camera at any other time.</td></tr>
+          <tr><td>Notifications</td><td>To show you an alert about new matches and messages. The alert is created <strong>on your device</strong> by the app itself — we do not operate a push server and we do not store any device token.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Collected automatically</h3>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Data</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Swipes and matches</td><td>The core function of the app, and how your daily swipe allowance is counted.</td></tr>
+          <tr><td>Advertising ID</td><td>Used by Google AdMob to serve and measure rewarded ads.</td></tr>
+          <tr><td>Ad completions</td><td>So an ad you finished credits swipes to <em>your</em> account and cannot be replayed.</td></tr>
+          <tr><td>Subscription status</td><td>Whether your premium subscription is active, from Google Play.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>We do not collect</strong> your contacts, your call or SMS logs, your files, your
+      browsing history, your microphone, or any biometric data. The app does not request microphone
+      access at all.</p>
+  </section>
+
+  <section class="clause" id="s4">
+    <h2><span class="num">04</span> Payments</h2>
+    <p>Premium subscriptions are sold through <strong>Google Play Billing</strong>. We never see or
+      store your card details. Google tells us only whether a purchase is valid and when it
+      expires.</p>
+  </section>
+
+  <section class="clause" id="s5">
+    <h2><span class="num">05</span> Who we share it with</h2>
+    <p>We do not sell your personal data. We share it only with the services that make the app
+      work:</p>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Who</th><th>What they get</th><th>What for</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Everything in section 3, stored on our behalf</td><td>Database, file storage, authentication. Our hosting provider.</td></tr>
+          <tr><td>Our email provider</td><td>Your email address</td><td>Delivering your one-time sign-in code.</td></tr>
+          <tr><td>Google AdMob</td><td>Advertising ID, ad interaction data</td><td>Serving and measuring rewarded ads.</td></tr>
+          <tr><td>Google Play</td><td>Purchase token</td><td>Confirming your subscription.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Other users see what you put on your profile: your name, age, gender, city, bio, photos, and
+      your approximate distance from them. <strong>They never see your email address or your exact
+      coordinates.</strong></p>
+    <p>We will also disclose data where the law requires it, or where it is necessary to investigate
+      a safety report.</p>
+  </section>
+
+  <section class="clause" id="s6">
+    <h2><span class="num">06</span> Where it is stored, and how it is protected</h2>
+    <p>Data is stored on Supabase infrastructure and is encrypted in transit (HTTPS/TLS). Access to
+      your rows is restricted at the database level so that one account cannot read another's
+      private data. Profile photos are stored in a bucket that is readable by other users of the
+      app — treat a photo you upload as public.</p>
+  </section>
+
+  <section class="clause" id="s7">
+    <h2><span class="num">07</span> How long we keep it</h2>
+    <p>We keep your data while your account exists. <strong>When you delete your account, it
+      goes</strong> — see section 8. Aggregate figures that cannot identify you, for example how
+      many accounts exist, may be retained. Backups are purged on our provider's ordinary
+      rotation.</p>
+  </section>
+
+  <section class="clause" id="s8">
+    <h2><span class="num">08</span> Deleting your account and your data</h2>
+    <p>You can delete your account <strong>inside the app</strong>: Profile → Delete Account. You
+      will be asked to confirm twice, because it cannot be undone.</p>
+    <p>Deleting removes your profile, photos, swipes, matches, messages, subscription record,
+      reports, blocks and ad-reward history. It is a deletion, not a deactivation — there is no
+      hidden copy waiting for you to come back.</p>
+    <p>If you cannot access the app, request deletion by writing to us from the email address on the
+      account, or use the web form. We complete the deletion within 30 days.</p>
+    <a class="btn" href="https://claude.ai/code/artifact/192a2c15-4ff7-45f1-8230-4cdb6421431b">Request deletion on the web</a>
+  </section>
+
+  <section class="clause" id="s9">
+    <h2><span class="num">09</span> Your rights</h2>
+    <p>You can see and change your profile data in the app at any time. You can withdraw location or
+      notification permission in Android settings. You can ask us for a copy of your data, or ask us
+      to correct it, by writing to
+      <span class="addr">flirty.app.support@gmail.com</span>.</p>
+  </section>
+
+  <section class="clause" id="s10">
+    <h2><span class="num">10</span> Changes to this policy</h2>
+    <p>If we change this policy we will update the date at the top and, where the change is
+      significant, tell you in the app.</p>
+  </section>
+
+  <section class="clause" id="s11">
+    <h2><span class="num">11</span> Contact</h2>
+    <p><span class="addr">flirty.app.support@gmail.com</span></p>
+  </section>
+
+  <footer>
+    <span>Flirty — a dating app for adults in India.</span>
+    <span class="stamp">Version of 22 Aug 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>
